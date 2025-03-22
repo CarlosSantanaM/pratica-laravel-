@@ -1,0 +1,213 @@
+/* ===================================================
+   Estilo do Body
+   =================================================== */
+   body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f6f9; /* Fundo cinza claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333; /* Cor do texto */
+}
+
+/* ===================================================
+   Estilo do Formulário de Login e Registro
+   =================================================== */
+
+/* Estilo do Formulário */
+.form-register, .form-login {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-register:hover, .form-login:hover {
+    transform: translateY(-8px); /* Efeito de elevação */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Mais sombreamento */
+}
+
+/* Estilo dos Campos de Entrada */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #555; /* Texto mais suave */
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #f4f6f9; /* Fundo suave no campo */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #0066cc; /* Cor do foco */
+    background-color: #ffffff; /* Fundo branco ao focar */
+    outline: none;
+}
+
+/* Estilo do Botão */
+.form-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #004ba0; /* Cor do botão ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação do botão */
+}
+
+/* Estilo de Alertas */
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Estilo do Link para Login */
+.form-link {
+    text-align: center;
+    color: #66b3ff; /* Azul claro para o link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-link:hover {
+    color: #238cf5; /* Azul mais forte ao passar o mouse */
+}
+
+
+/* ===================================================
+   Estilo do Cabeçalho (Nome do Usuário e Menu de Logout)
+   =================================================== */
+
+/* Cabeçalho com nome do usuário e o menu de logout */
+.header {
+    display: flex;
+    justify-content: flex-end; /* Coloca o conteúdo à direita */
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+    color: #333;
+    display: inline-block;
+}
+
+/* Estilo do ícone de 3 barras (Hamburguer) */
+.menu-icon {
+    cursor: pointer;
+    width: 16px; /* Largura bem menor */
+    height: 12px; /* Altura bem menor */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-icon div {
+    width: 100%;
+    height: 2px; /* Barras mais finas */
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+}
+
+.dropdown.open .dropdown-content {
+    display: block; /* Torna visível quando a classe 'open' for adicionada */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Botão de Logout */
+.logout-btn {
+    background-color: #ff4c4c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+
+.logout-btn:hover {
+    background-color: #e04242;
+}
+
+
+/* ===================================================
+   Estilo do Conteúdo Principal
+   =================================================== */
+
+.content {
+    text-align: center;
+    color: #333;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content p {
+    font-size: 16px;
+    color: #777;
+}
