@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Post;
 
 class HomeController extends Controller
 {
-    public function index() {
+    public function index()
+    {
+        $user = Auth::user(); // Obtendo o usuário autenticado
+        $posts = Post::all(); // Busca todos os posts
 
-        $user = Auth::user(); // Obtendo o usuario cadastrado
-
-        return view('home', compact('user')); // Passando a variavel $user com o usuario cadastrado para home.blade.php
+        return view('home', compact('user', 'posts')); // Passa ambas as variáveis para a view
     }
 }
