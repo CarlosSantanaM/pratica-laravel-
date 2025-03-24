@@ -10,9 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $user = Auth::user(); // Obtendo o usuário autenticado
-        $posts = Post::all(); // Busca todos os posts
+        //$user = Auth::user(); // Obtendo o usuário autenticado
 
-        return view('home', compact('user', 'posts')); // Passa ambas as variáveis para a view
+        //return view('home', compact('user')); // Passa a variável para a view
     }
 }

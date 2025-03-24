@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ Route::get('/register', [UserController::class, 'showregister'])->name('form.reg
 Route::post('/register', [UserController::class, 'register'])->name('user.register');
 
 // Home
-Route::get('/home', [HomeController::class, 'index'])->name('index.home')->middleware('auth');
+Route::get('/home', [PostController::class, 'index'])->name('index.home')->middleware('auth');
 
 Route::post('/logout', function (Request $request) {
     Auth::logout(); // Faz o logout do usuário
@@ -27,16 +28,4 @@ Route::post('/logout', function (Request $request) {
     return redirect('login'); // Redireciona para a página de login
 })->name('logout');
 
-
-
-/*
-    Task 1: Login/Register de Usuarios.
-
-    Task 2: Pagina Home
-
-    Task 3: Mostrar usuario cadastrado na home
-
-    Task 4: Logout do usuario
-
-    Task 5:
-*/
+Route::resource('posts', PostController::class);
