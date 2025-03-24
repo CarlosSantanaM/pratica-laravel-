@@ -24,7 +24,7 @@ Route::post('/logout', function (Request $request) {
     Auth::logout(); // Faz o logout do usuário
     $request->session()->invalidate(); // Invalida a sessão
     $request->session()->regenerateToken(); // Regenera o token CSRF
-    return redirect('/login'); // Redireciona para a página de login
+    return redirect('login'); // Redireciona para a página de login
 })->name('logout');
 
 
