@@ -37,4 +37,6 @@ Route::post('/logout', function (Request $request) {
     Task 3: Mostrar usuario cadastrado na home
 
     Task 4: Logout do usuario
+
+    Task 5:
 */

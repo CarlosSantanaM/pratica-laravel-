@@ -1,6 +1,7 @@
 @extends('layouts.template')
 
 @section('content')
+
     <!-- Container principal da página -->
     <div class="home-container">
         <!-- Cabeçalho com informações do usuário -->

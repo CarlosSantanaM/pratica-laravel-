@@ -152,30 +152,27 @@
     transition: all 0.3s ease;
 }
 
-.dropdown {
-    position: relative;
-}
-
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 15px;
+    top: 35px;
     right: 0;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 10px;
     z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Quando a classe 'open' for adicionada, o menu aparece */
 .dropdown.open .dropdown-content {
-    display: block; /* Torna visível quando a classe 'open' for adicionada */
-}
-
-.dropdown:hover .dropdown-content {
     display: block;
+    opacity: 1;
+    visibility: visible;
 }
-
 /* Botão de Logout */
 .logout-btn {
     background-color: #ff4c4c;
