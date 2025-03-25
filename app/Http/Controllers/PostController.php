@@ -86,6 +86,16 @@ class PostController extends Controller
     // deletar um post
     public function destroy(string $id)
     {
-        //
+        $post = Post::findOrFail($id); // Encontrar post pelo ID
+
+        //Verifica se o usuario logado e o dono do post
+        if($post->user_id !== Auth::id()){
+            // Se nao for, redirect de volta com msg de erro
+            return redirect()->route('index.home')->with('error', 'Voce nao tem permissao para excluir este post');
+        }
+
+        $post->delete(); // Deleta o post
+
+        return redirect()->route('index.home')->with('seccess', 'Post deletado com sucesso');
     }
 }

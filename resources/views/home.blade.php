@@ -20,6 +20,13 @@
                         @if ($post->user_id === Auth::id())
                             <!-- Link para editar o post, se for do usuário logado -->
                             <a href="{{ route('posts.edit', $post->id) }}">Editar</a>
+
+                            <!-- Formulário para deletar o post -->
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este post?');">Deletar</button>
+                            </form>
                         @endif
                     </div>
                     <hr>
