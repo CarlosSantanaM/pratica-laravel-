@@ -11,12 +11,12 @@
 
             <div class="form-group">
                 <label for="title">Título</label>
-                <input type="text" name="title" value="{{ old('title', $post->title) }}" required>
+                <input type="text" name="title" value="{{ old('title', $post->title) }}" class="form-input" required>
             </div>
 
             <div class="form-group">
                 <label for="content">Conteúdo</label>
-                <textarea name="content" required>{{ old('content', $post->content) }}</textarea>
+                <textarea name="content" class="form-input" required>{{ old('content', $post->content) }}</textarea>
             </div>
 
             <button type="submit">Salvar Alterações</button>

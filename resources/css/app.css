@@ -13,10 +13,197 @@
 }
 
 /* ===================================================
-   Estilo do Formulário de Login e Registro
+   Estilo do Feed de Posts
    =================================================== */
 
-/* Estilo do Formulário */
+.post-item {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-item:hover {
+    transform: translateY(-8px); /* Efeito de elevação */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Mais sombreamento */
+}
+
+.post-item .user-info {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0066cc; /* Cor do nome do usuário */
+    margin-bottom: 10px;
+}
+
+.post-item h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.post-item p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.post-item .post-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.post-item .post-actions a,
+.post-item .post-actions form button {
+    background-color: #0066cc;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.post-item .post-actions a:hover,
+.post-item .post-actions form button:hover {
+    background-color: #004ba0;
+    transform: translateY(-2px);
+}
+
+.post-item .post-actions form button {
+    background-color: #ff4c4c;
+    transition: background-color 0.3s ease;
+}
+
+.post-item .post-actions form button:hover {
+    background-color: #e04242;
+}
+
+/* ===================================================
+   Estilo do Cabeçalho (Nome do Usuário e Menu de Logout)
+   =================================================== */
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+    color: #333;
+    display: inline-block;
+}
+
+/* ===================================================
+   Estilo do Formulário de Criação de Post
+   =================================================== */
+
+.create-post-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.create-post-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.create-post-form .form-group {
+    margin-bottom: 20px;
+}
+
+.create-post-form .form-input,
+.create-post-form textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #f4f6f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.create-post-form .form-input:focus,
+.create-post-form textarea:focus {
+    border-color: #0066cc;
+    background-color: #ffffff;
+    outline: none;
+}
+
+.create-post-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.create-post-form button:hover {
+    background-color: #004ba0;
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   Estilo do Botão de Criar Post
+   =================================================== */
+
+.create-post-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 12px 20px;
+    background-color: #0066cc;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.create-post-btn:hover {
+    background-color: #004ba0;
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   Estilo do Formulário de Login e Registro
+   =================================================== */
 .form-register, .form-login {
     width: 100%;
     max-width: 400px;
@@ -32,7 +219,6 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Mais sombreamento */
 }
 
-/* Estilo dos Campos de Entrada */
 .form-group {
     margin-bottom: 20px;
 }
@@ -81,7 +267,9 @@
     transform: translateY(-2px); /* Efeito de elevação do botão */
 }
 
-/* Estilo de Alertas */
+/* ===================================================
+   Estilo de Alertas
+   =================================================== */
 .alert {
     background-color: #f8d7da;
     color: #721c24;
@@ -91,7 +279,9 @@
     font-size: 14px;
 }
 
-/* Estilo do Link para Login */
+/* ===================================================
+   Estilo do Link para Login
+   =================================================== */
 .form-link {
     text-align: center;
     color: #66b3ff; /* Azul claro para o link */
@@ -104,12 +294,9 @@
     color: #238cf5; /* Azul mais forte ao passar o mouse */
 }
 
-
 /* ===================================================
    Estilo do Cabeçalho (Nome do Usuário e Menu de Logout)
    =================================================== */
-
-/* Cabeçalho com nome do usuário e o menu de logout */
 .header {
     display: flex;
     justify-content: flex-end; /* Coloca o conteúdo à direita */
@@ -173,6 +360,7 @@
     opacity: 1;
     visibility: visible;
 }
+
 /* Botão de Logout */
 .logout-btn {
     background-color: #ff4c4c;
@@ -188,11 +376,9 @@
     background-color: #e04242;
 }
 
-
 /* ===================================================
    Estilo do Conteúdo Principal
    =================================================== */
-
 .content {
     text-align: center;
     color: #333;
