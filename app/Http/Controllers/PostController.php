@@ -56,13 +56,31 @@ class PostController extends Controller
     // Exibir form de edicao de post ja existente
     public function edit(string $id)
     {
-        //
+        $post = Post::findOrFail($id); // Encontra o post pelo ID ou ira retornar 404 caso nao encontre
+
+        if( $post->user_id !== Auth::id()) {
+            // Se o post no for do usuario retorna msg de erro
+            return redirect()->route('index.home')->with('error', ' Voce nao tem permissao para editar esse post');
+        }
+
+        return view('posts.edit', compact('post')); // Retorna a view com o post
     }
 
     // Atualizar post existente no banco de dados
     public function update(Request $request, string $id)
     {
-        //
+        // Validando o form
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+        ]);
+
+        $post = Post::findOrFail($id); // Encontra o post a ser att
+        $post->title = $request->title; // Att o titulo
+        $post->content = $request->content; // Att o conteudo
+        $post->save(); // Salva no banco de dados
+
+        return redirect()->route('index.home')->with('success', 'Post atualizado com sucesso!');
     }
 
     // deletar um post
